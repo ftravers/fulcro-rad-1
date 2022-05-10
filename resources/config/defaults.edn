@@ -1,0 +1,8 @@
+{
+:com.fulcrologic.rad.database-adapters.datomic/databases
+                                    {:main {:datomic/schema           :production
+                                            :datomic/driver           :mem
+                                            :datomic/database         "example"
+                                            :datomic/prevent-changes? true}}
+
+}

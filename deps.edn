@@ -1,12 +1,21 @@
-{:deps {org.clojure/clojure {:mvn/version "1.11.1"}
-        cljsjs/react {:mvn/version "17.0.2-0"}
-        cljsjs/react-dom {:mvn/version "17.0.2-0"}
-        reagent/reagent {:mvn/version "1.1.1"}
-        com.fulcrologic/fulcro-rad {:mvn/version "1.1.9"}
-        org.clojure/clojurescript {:mvn/version "1.11.4"}}
+{:paths ["src/main" "resources" "target"]
 
- :paths ["src" "resources" "target"]
+ :deps
+ {
+  org.clojure/clojure {:mvn/version "1.11.1"}
+  com.fulcrologic/fulcro-rad {:mvn/version "1.1.9"}
+  mount/mount {:mvn/version "0.1.16"}
+  com.taoensso/timbre {:mvn/version "5.2.1"}}
 
- :aliases {:fig {:extra-deps {com.bhauman/rebel-readline-cljs {:mvn/version "0.1.4"}
-                              org.slf4j/slf4j-nop {:mvn/version "1.7.30"}
-                              com.bhauman/figwheel-main {:mvn/version "0.2.17"}}}}}
+ :aliases {:dev
+           {:extra-paths ["src/dev" "resources"]}
+
+           :datomic
+           {:extra-paths ["src/datomic"]
+            :extra-deps {
+                         com.fulcrologic/fulcro-rad-datomic {:mvn/version "1.0.9"}
+                         com.datomic/datomic-free {:mvn/version "0.9.5697"
+                                                   :exclusions [org.slf4j/slf4j-nop]}}}}
+ }
+
+

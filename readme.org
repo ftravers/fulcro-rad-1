@@ -1,0 +1,4 @@
+You can start up the datomic server separatedly with:
+
+clj -A:dev:datomic
+
